@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculater</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="display"></div>
+        <div id="numbers">
+            <button id="seven" class="buttons">7</button>
+            <button id="eight" class="buttons">8</button>
+            <button id="nine" class="buttons">9</button>
+            <button id="divide" class="buttons">/</button>
+            <button id="four" class="buttons">4</button>
+            <button id="five" class="buttons">5</button>
+            <button id="six" class="buttons">6</button>
+            <button id="multiply" class="buttons">X</button>
+            <button id="one" class="buttons">1</button>
+            <button id="two" class="buttons">2</button>
+            <button id="three" class="buttons">3</button>
+            <button id="minuse" class="buttons">-</button>
+            <button id="zero" class="buttons">0</button>
+            <button id="dot" class="buttons">.</button>
+            <button id="equals" class="buttons">=</button>
+            <button id="pluse" class="buttons">+</button>
+        </div>
+    </div>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #container {
+            height: 300px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            gap: 30px;
+            border-radius: 8px;
+        }
+        
+        #display {
+            width: 80%;
+            height: 30px;
+            text-align: center;
+            border: solid black 2px;
+            background-color: yellow;
+            border-radius: 8px;
+        }
+        
+        #numbers {
+            display: flex;
+            flex-wrap: wrap;
+            width: fit-content;
+            /* align-items: center;
+            justify-content: center; */
+            /* align-items: center; */
+            /* height: 200px; */
+            /* width: fit-content; */
+            /* margin-top: 5px; */
+            /* margin-left: 2px; */
+        }
+        
+        .buttons {
+            width: 25%;
+        }
+    </style>
+
+    <script>
+        const zero = document.getElementById("zero");
+        const one = document.getElementById("one");
+        const two = document.getElementById("two");
+        const three = document.getElementById("three");
+        const four = document.getElementById("four");
+        const five = document.getElementById("five");
+        const six = document.getElementById("six");
+        const seven = document.getElementById("seven");
+        const eight = document.getElementById("eight");
+        const nine = document.getElementById("nine");
+        const dot = document.getElementById("dot");
+        const display = document.getElementById("display");
+        const divide = document.getElementById("divide");
+        const multiply = document.getElementById("multiply");
+        const minuse = document.getElementById("minuse");
+        const pluse = document.getElementById("pluse");
+
+        let result = 0;
+        console.log("hello");
+        seven.addEventListener("click", () => {
+            display.innerHTML = 7;
+        });
+        eight.addEventListener("click", () => {
+            display.innerHTML = 8;
+        });
+
+        // console.log(parseInt(result.innerHTML));
+    </script>
+</body>
+
+</html>
