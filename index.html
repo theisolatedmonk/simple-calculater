@@ -6,32 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculater</title>
+    <link href="/dist/output.css" rel="stylesheet">
 </head>
 
-<body>
-    <div id="container">
-        <div id="display"></div>
-        <div id="numbers">
-            <button id="seven" class="buttons">7</button>
-            <button id="eight" class="buttons">8</button>
-            <button id="nine" class="buttons">9</button>
-            <button id="divide" class="buttons">/</button>
-            <button id="four" class="buttons">4</button>
-            <button id="five" class="buttons">5</button>
-            <button id="six" class="buttons">6</button>
-            <button id="multiply" class="buttons">X</button>
-            <button id="one" class="buttons">1</button>
-            <button id="two" class="buttons">2</button>
-            <button id="three" class="buttons">3</button>
-            <button id="minuse" class="buttons">-</button>
-            <button id="zero" class="buttons">0</button>
-            <button id="dot" class="buttons">.</button>
-            <button id="equals" class="buttons">=</button>
-            <button id="pluse" class="buttons">+</button>
+<body class="flex  justify-center items-center">
+    <div id="container" class="min-h-min w-80 flex flex-col justify-center items-center  bg-gray-400 gap-5">
+        <div id="display" class="bg-blue-400 h-8 w-72"></div>
+        <div id="extra_btn" class="w-72 h-10 bg-yellow-200 flex justify-between">
+            <button id="btn_back">Back</button>
+            <button id="btn_clr">Clr</button>
+
+        </div>
+        <div id="numbers" class="flex flex-wrap w-72 justify-center  items-center text-center  gap-8 bg-red-500 ">
+            <button id="seven" class="buttons w-10 h-10 bg-yellow-50 items-center ">7</button>
+            <button id="eight" class="buttons bg-yellow-50 w-10 h-10">8</button>
+            <button id="nine" class="buttons bg-yellow-50 w-10 h-10">9</button>
+            <button id="divide" class="buttons bg-yellow-50 w-10 h-10">/</button>
+            <button id="four" class="buttons bg-yellow-50 w-10 h-10">4</button>
+            <button id="five" class="buttons bg-yellow-50 w-10 h-10">5</button>
+            <button id="six" class="buttons bg-yellow-50 w-10 h-10">6</button>
+            <button id="multiply" class="buttons bg-yellow-50 w-10 h-10">X</button>
+            <button id="one" class="buttons bg-yellow-50 w-10 h-10">1</button>
+            <button id="two" class="buttons bg-yellow-50 w-10 h-10">2</button>
+            <button id="three" class="buttons bg-yellow-50 w-10 h-10">3</button>
+            <button id="minuse" class="buttons bg-yellow-50 w-10 h-10">-</button>
+            <button id="zero" class="buttons bg-yellow-50 w-10 h-10">0</button>
+            <button id="dot" class="buttons bg-yellow-50 w-10 h-10">.</button>
+            <button id="equals" class="buttons bg-yellow-50 w-10 h-10">=</button>
+            <button id="pluse" class="buttons bg-yellow-50 w-10 h-10">+</button>
         </div>
     </div>
 
-    <style>
+    <!-- <style>
         body {
             display: flex;
             justify-content: center;
@@ -51,10 +57,16 @@
             border-radius: 8px;
         }
         
+        #eextra_btn {
+            display: flex;
+            flex-wrap: wrap;
+            width: fit-content;
+          
         #display {
             width: 80%;
             height: 30px;
-            text-align: center;
+            text-ali  }
+    gn: center;
             border: solid black 2px;
             background-color: yellow;
             border-radius: 8px;
@@ -76,9 +88,11 @@
         .buttons {
             width: 25%;
         }
-    </style>
+    </style> -->
 
     <script>
+        const btn_clr = document.getElementById("btn_clr");
+        const btn_back = document.getElementById("btn_back");
         const zero = document.getElementById("zero");
         const one = document.getElementById("one");
         const two = document.getElementById("two");
@@ -90,20 +104,108 @@
         const eight = document.getElementById("eight");
         const nine = document.getElementById("nine");
         const dot = document.getElementById("dot");
-        const display = document.getElementById("display");
+        // const display = document.getElementById("display");
         const divide = document.getElementById("divide");
         const multiply = document.getElementById("multiply");
         const minuse = document.getElementById("minuse");
         const pluse = document.getElementById("pluse");
+        const equals = document.getElementById("equals");
 
-        let result = 0;
-        console.log("hello");
+        let number = '';
+        let result = eval(number);
+        console.log("number-", number);
+
+        dot.addEventListener("click", () => {
+            display.innerHTML = number + ".";
+            number = number + ".";
+        });
+
+        divide.addEventListener("click", () => {
+            if (!(number.charAt(number.length - 1) === "/")) {
+                display.innerHTML = number + "/";
+                number = number + "/";
+            }
+        });
+        multiply.addEventListener("click", () => {
+            display.innerHTML = number + "*";
+            number = number + "*";
+        });
+        minuse.addEventListener("click", () => {
+            display.innerHTML = number + "-";
+            number = number + "-";
+        });
+        pluse.addEventListener("click", () => {
+            display.innerHTML = number + "+";
+            number = number + "+";
+        });
+
+        zero.addEventListener("click", () => {
+            display.innerHTML = number + "0";
+            number = number + "0";
+        });
+
+        one.addEventListener("click", () => {
+            display.innerHTML = number + "1";
+            number = number + "1";
+        });
+        two.addEventListener("click", () => {
+            display.innerHTML = number + "2";
+            number = number + "2";
+        });
+        three.addEventListener("click", () => {
+            display.innerHTML = number + "3";
+            number = number + "3";
+        });
+        four.addEventListener("click", () => {
+            display.innerHTML = number + "4";
+            number = number + "4";
+        });
+        five.addEventListener("click", () => {
+            display.innerHTML = number + "5";
+            number = number + "5";
+        });
+        six.addEventListener("click", () => {
+            display.innerHTML = number + "6";
+            number = number + "6";
+        });
+
         seven.addEventListener("click", () => {
-            display.innerHTML = 7;
+            display.innerHTML = number + "7";
+            number = number + "7";
+            console.log("number-", typeof number);
+            // console.log(display.innerHTML = 7);
         });
         eight.addEventListener("click", () => {
-            display.innerHTML = 8;
+            display.innerHTML = number + "8";
+            number = number + "8";
         });
+        nine.addEventListener("click", () => {
+            display.innerHTML = number + "9";
+            number = number + "9";
+        });
+
+        // equals.addEventListener("click", () => {
+        //     display.innerHTML = eval(number);
+        //     number = 0;
+        // });
+        equals.addEventListener("click", () => {
+            display.innerHTML = eval(number);
+            number = eval(number);
+        });
+        btn_clr.addEventListener("click", () => {
+            display.innerHTML = "";
+            number = '';
+        });
+
+        btn_back.addEventListener("click", () => {
+            display.innerHTML = number.substring(0, number.length - 1);
+            number = number.substring(0, number.length - 1);
+        });
+
+        //         var string = 'Scaler Academy';
+
+        // string = string.substring(0, string.length-1);
+        // console.log(string);
 
         // console.log(parseInt(result.innerHTML));
     </script>
