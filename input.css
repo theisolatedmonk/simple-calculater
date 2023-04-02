@@ -2,5 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 .btns {
-    @apply w-12 h-12 bg-white items-center rounded-full font-bold;
+    @apply w-12 h-12 bg-white items-center rounded-full font-bold bg-red-200;
+}
+
+.btns:hover {
+    @apply bg-red-200;
 }

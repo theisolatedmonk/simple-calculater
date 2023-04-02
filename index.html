@@ -7,20 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculater</title>
     <link href="/dist/output.css" rel="stylesheet" />
+    <link href="/input.css" rel="stylesheet" />
     <!-- <link href="/in.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex justify-center items-center bg-black">
-    <div id="container" class="rounded-lg h-screen w-72 flex flex-col justify-center items-center bg-neutral-800 bg-opacity-40 from-slate-100 gap-5 my-8 border border-x-white font-bold border-opacity-40">
-        <textarea disabled id="display" class="bg-neutral-800 p-1 h-28 w-full rounded-lg px-4 text-right
-        text-yellow-50 bg-opacity-0 text-opacity-100"></textarea>
+<body class="flex h-screen justify-center items-center bg-black">
+    <div id="container" class="rounded-lg w-72 flex flex-col justify-center items-center bg-neutral-800 from-slate-100 gap-3 border border-x-white font-bold border-opacity-40">
+        <textarea disabled id="display" class="bg-neutral-800 p-1 h-24 w-full rounded-lg px-4 text-right text-yellow-50 bg-opacity-20 text-opacity-100 inline-block align-text-bottom "></textarea>
 
-        <div id="numbers" class="flex flex-wrap w-72 justify-center items-center text-center gap-6">
-            <button id="btn_back" class="btns"><img src="./image/backspace.svg"  alt=""></button>
+        <div id="numbers" class="flex flex-wrap w-full py-4 border border-t-1 bg-neutral-800 justify-center items-center text-center rounded-sm gap-5">
+            <button id="btn_back" class="btns">
+          <img src="./image/backspace.svg" alt="" />
+        </button>
             <button id="btn_clr" class="btns">AC</button>
             <button id="percent" class="btns">%</button>
             <button id="twozero" class="btns">00</button>
-            <button id="seven" class="btns  hover: bg-green-300">7</button>
+            <button id="seven" class="btns hover:">7</button>
             <button id="eight" class="btns">8</button>
             <button id="nine" class="btns">9</button>
             <button id="divide" class="btns">/</button>
