@@ -6,34 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Calculater</title>
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="/dist/output.css" rel="stylesheet" />
+    <!-- <link href="/in.css" rel="stylesheet"> -->
 </head>
 
-<body class="flex  justify-center items-center">
-    <div id="container" class="min-h-min w-80 flex flex-col justify-center items-center  bg-gray-400 gap-5">
-        <div id="display" class="bg-blue-400 h-8 w-72"></div>
-        <div id="extra_btn" class="w-72 h-10 bg-yellow-200 flex justify-between">
-            <button id="btn_back">Back</button>
-            <button id="btn_clr">Clr</button>
+<body class="flex justify-center items-center bg-black">
+    <div id="container" class="rounded-lg h-screen w-72 flex flex-col justify-center items-center bg-neutral-800 bg-opacity-40 from-slate-100 gap-5 my-8 border border-x-white font-bold border-opacity-40">
+        <textarea disabled id="display" class="bg-neutral-800 p-1 h-28 w-full rounded-lg px-4 text-right
+        text-yellow-50 bg-opacity-0 text-opacity-100"></textarea>
 
-        </div>
-        <div id="numbers" class="flex flex-wrap w-72 justify-center  items-center text-center  gap-8 bg-red-500 ">
-            <button id="seven" class="buttons w-10 h-10 bg-yellow-50 items-center ">7</button>
-            <button id="eight" class="buttons bg-yellow-50 w-10 h-10">8</button>
-            <button id="nine" class="buttons bg-yellow-50 w-10 h-10">9</button>
-            <button id="divide" class="buttons bg-yellow-50 w-10 h-10">/</button>
-            <button id="four" class="buttons bg-yellow-50 w-10 h-10">4</button>
-            <button id="five" class="buttons bg-yellow-50 w-10 h-10">5</button>
-            <button id="six" class="buttons bg-yellow-50 w-10 h-10">6</button>
-            <button id="multiply" class="buttons bg-yellow-50 w-10 h-10">X</button>
-            <button id="one" class="buttons bg-yellow-50 w-10 h-10">1</button>
-            <button id="two" class="buttons bg-yellow-50 w-10 h-10">2</button>
-            <button id="three" class="buttons bg-yellow-50 w-10 h-10">3</button>
-            <button id="minuse" class="buttons bg-yellow-50 w-10 h-10">-</button>
-            <button id="zero" class="buttons bg-yellow-50 w-10 h-10">0</button>
-            <button id="dot" class="buttons bg-yellow-50 w-10 h-10">.</button>
-            <button id="equals" class="buttons bg-yellow-50 w-10 h-10">=</button>
-            <button id="pluse" class="buttons bg-yellow-50 w-10 h-10">+</button>
+        <div id="numbers" class="flex flex-wrap w-72 justify-center items-center text-center gap-6">
+            <button id="btn_back" class="btns"><img src="./image/backspace.svg"  alt=""></button>
+            <button id="btn_clr" class="btns">AC</button>
+            <button id="percent" class="btns">%</button>
+            <button id="twozero" class="btns">00</button>
+            <button id="seven" class="btns  hover: bg-green-300">7</button>
+            <button id="eight" class="btns">8</button>
+            <button id="nine" class="btns">9</button>
+            <button id="divide" class="btns">/</button>
+            <button id="four" class="btns">4</button>
+            <button id="five" class="btns">5</button>
+            <button id="six" class="btns">6</button>
+            <button id="multiply" class="btns">X</button>
+            <button id="one" class="btns">1</button>
+            <button id="two" class="btns">2</button>
+            <button id="three" class="btns">3</button>
+            <button id="minuse" class="btns">-</button>
+            <button id="zero" class="btns">0</button>
+            <button id="dot" class="btns">.</button>
+            <button id="equals" class="btns">=</button>
+            <button id="pluse" class="btns">+</button>
         </div>
     </div>
 
@@ -85,10 +87,7 @@
             /* margin-left: 2px; */
         }
         
-        .buttons {
-            width: 25%;
-        }
-    </style> -->
+        .btns </style> -->
 
     <script>
         const btn_clr = document.getElementById("btn_clr");
@@ -110,8 +109,10 @@
         const minuse = document.getElementById("minuse");
         const pluse = document.getElementById("pluse");
         const equals = document.getElementById("equals");
+        const percent = document.getElementById("percent");
+        const twozero = document.getElementById("twozero");
 
-        let number = '';
+        let number = " 99999999999999999999999999999999998888";
         let result = eval(number);
         console.log("number-", number);
 
@@ -183,6 +184,14 @@
             display.innerHTML = number + "9";
             number = number + "9";
         });
+        twozero.addEventListener("click", () => {
+            display.innerHTML = number + "00";
+            number = number + "00";
+        });
+        percent.addEventListener("click", () => {
+            display.innerHTML = number * 0.01;
+            number = number * 0.01;
+        });
 
         // equals.addEventListener("click", () => {
         //     display.innerHTML = eval(number);
@@ -194,7 +203,7 @@
         });
         btn_clr.addEventListener("click", () => {
             display.innerHTML = "";
-            number = '';
+            number = "";
         });
 
         btn_back.addEventListener("click", () => {
