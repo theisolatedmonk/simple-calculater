@@ -8,7 +8,6 @@
     <title>Simple Calculater</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <link href="/input.css" rel="stylesheet" />
-    <!-- <link href="/in.css" rel="stylesheet"> -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -42,55 +41,6 @@
         </div>
     </div>
 
-    <!-- <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        
-        #container {
-            height: 300px;
-            width: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid black;
-            gap: 30px;
-            border-radius: 8px;
-        }
-        
-        #eextra_btn {
-            display: flex;
-            flex-wrap: wrap;
-            width: fit-content;
-          
-        #display {
-            width: 80%;
-            height: 30px;
-            text-ali  }
-    gn: center;
-            border: solid black 2px;
-            background-color: yellow;
-            border-radius: 8px;
-        }
-        
-        #numbers {
-            display: flex;
-            flex-wrap: wrap;
-            width: fit-content;
-            /* align-items: center;
-            justify-content: center; */
-            /* align-items: center; */
-            /* height: 200px; */
-            /* width: fit-content; */
-            /* margin-top: 5px; */
-            /* margin-left: 2px; */
-        }
-        
-        .btns </style> -->
 
     <script>
         const btn_clr = document.getElementById("btn_clr");
@@ -106,7 +56,6 @@
         const eight = document.getElementById("eight");
         const nine = document.getElementById("nine");
         const dot = document.getElementById("dot");
-        // const display = document.getElementById("display");
         const divide = document.getElementById("divide");
         const multiply = document.getElementById("multiply");
         const minuse = document.getElementById("minuse");
@@ -177,7 +126,6 @@
             display.innerHTML = number + "7";
             number = number + "7";
             console.log("number-", typeof number);
-            // console.log(display.innerHTML = 7);
         });
         eight.addEventListener("click", () => {
             display.innerHTML = number + "8";
@@ -196,10 +144,6 @@
             number = number * 0.01;
         });
 
-        // equals.addEventListener("click", () => {
-        //     display.innerHTML = eval(number);
-        //     number = 0;
-        // });
         equals.addEventListener("click", () => {
             display.innerHTML = eval(number);
             number = eval(number);
@@ -212,15 +156,9 @@
         btn_back.addEventListener("click", () => {
             display.innerHTML = number.substring(0, number.length - 1);
             number = (number.substring(0, number.length - 1))
-            number.substring(0, (eval(number)).length - 1)
+
+
         });
-
-        //         var string = 'Scaler Academy';
-
-        // string = string.substring(0, string.length-1);
-        // console.log(string);
-
-        // console.log(parseInt(result.innerHTML));
     </script>
 </body>
 
