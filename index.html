@@ -17,7 +17,7 @@
         <textarea disabled id="display" class="bg-neutral-800 p-1 h-24 w-full rounded-lg px-4 text-right text-yellow-50 bg-opacity-20 text-opacity-100 inline-block align-text-bottom "></textarea>
 
         <div id="numbers" class="flex flex-wrap w-full py-4 border border-t-1 bg-neutral-800 justify-center items-center text-center rounded-sm gap-5">
-            <button id="btn_back" class="btns">
+            <button id="btn_back" class="btns flex justify-center items-center">
           <img src="./image/backspace.svg" alt="" />
         </button>
             <button id="btn_clr" class="btns">AC</button>
@@ -211,7 +211,8 @@
 
         btn_back.addEventListener("click", () => {
             display.innerHTML = number.substring(0, number.length - 1);
-            number = number.substring(0, number.length - 1);
+            number = (number.substring(0, number.length - 1))
+            number.substring(0, (eval(number)).length - 1)
         });
 
         //         var string = 'Scaler Academy';

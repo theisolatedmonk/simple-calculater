@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 .btns {
-    @apply w-12 h-12 bg-white items-center rounded-full font-bold bg-red-200;
+    @apply w-12 h-12 bg-gray-100 items-center rounded-full font-bold;
 }
 
 .btns:hover {
-    @apply bg-red-200;
+    @apply opacity-75 shadow;
+}
+
+.btns:focus {
+    @apply ring-2 ring-violet-200;
 }
